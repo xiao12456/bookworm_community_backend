@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.bookworm_community_backend.common.api.ApiResult;
 import com.example.bookworm_community_backend.model.entity.BmsBillboard;
 import com.example.bookworm_community_backend.service.BmsBillboardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/billboard")
+@Slf4j
 public class BmsBillboardController extends BaseController {
 
     @Autowired
@@ -21,6 +23,7 @@ public class BmsBillboardController extends BaseController {
     @GetMapping("/show")
     public ApiResult<BmsBillboard> getNotices() {
         List<BmsBillboard> list = bmsBillboardService.list(new LambdaQueryWrapper<BmsBillboard>().eq(BmsBillboard::isShow, true));
+        log.info("获取公告:{}", list);
         return ApiResult.success(list.get(list.size() - 1));
     }
 }

@@ -42,6 +42,6 @@ public class BmsBillboard implements Serializable {
      * 0: 过期
      */
     @Builder.Default
-    @TableField("show")
+    @TableField("`show`")
     private boolean show = false;
 }
