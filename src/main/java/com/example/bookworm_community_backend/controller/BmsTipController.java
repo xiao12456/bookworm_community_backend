@@ -19,7 +19,7 @@ public class BmsTipController extends BaseController {
 
     @GetMapping("/today")
     public ApiResult<BmsTip> getTodayTip() {
-        BmsTip randomTip = bmsTipService.getRandomTip();
+        BmsTip randomTip = bmsTipService.getRandomTip(true);
         log.info("获取每日一句:{}", randomTip);
         return ApiResult.success(randomTip);
     }

@@ -43,6 +43,6 @@ public class BmsTip implements Serializable {
      * 0: 禁用
      */
     @Builder.Default
-    @TableField("type")
-    private boolean type = false;
+    @TableField("status")
+    private boolean status = false;
 }

@@ -1,3 +1,11 @@
 spring:
   profiles:
     active: dev
+logging:
+  level:
+    com:
+      example:
+        bookworm_community_backend:
+          mapper: debug
+          service: info
+          controller: info

@@ -4,6 +4,11 @@
     <select id="getRandomTip" resultType="com.example.bookworm_community_backend.model.entity.BmsTip">
         select *
         from bms_tip
+        <where>
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </where>
         order by rand()
         limit 1
     </select>

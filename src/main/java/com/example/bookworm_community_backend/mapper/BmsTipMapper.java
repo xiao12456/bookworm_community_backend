@@ -6,5 +6,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface BmsTipMapper extends BaseMapper<BmsTip> {
-    BmsTip getRandomTip();
+    /**
+     * 获取随机的每日一句
+     *
+     * @param status true: 显示，false: 隐藏
+     * @return 随机的每日一句对象
+     */
+    BmsTip getRandomTip(boolean status);
 }

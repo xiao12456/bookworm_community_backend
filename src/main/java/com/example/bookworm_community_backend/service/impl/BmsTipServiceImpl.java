@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class BmsTipServiceImpl extends ServiceImpl<BmsTipMapper, BmsTip> implements BmsTipService {
     @Override
-    public BmsTip getRandomTip() {
-        return baseMapper.getRandomTip();
+    public BmsTip getRandomTip(boolean status) {
+        return baseMapper.getRandomTip(status);
     }
 }
